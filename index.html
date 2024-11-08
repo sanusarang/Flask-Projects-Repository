@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness App</title>
+    <link rel="stylesheet" href="C:\Fitnesswebap\static\styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fitness App: BMI Calculator</h1>
+        <form action="/calculate_bmi" method="POST">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" name="weight" required><br>
+            <label for="height">Height (cm):</label>
+            <input type="number" name="height" required><br>
+            <input type="submit" value="Calculate">
+        </form>
+
+        <!-- Results will be dynamically displayed here -->
+        <h2 id="bmi-result">{% if bmi %}Your BMI: {{ bmi }}{% endif %}</h2>
+        <h3>Workout Suggestion:</h3>
+        <p id="workout-suggestion">{% if workout %}{{ workout }}{% endif %}</p>
+        <h3>Diet Plan:</h3>
+        <p id="diet-suggestion">{% if diet %}{{ diet }}{% endif %}</p>
+    </div>
+
+<!--<script src="C:\Fitnesswebap\static\scripts.js"></script> -->
+</body>
+</html>
